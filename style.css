@@ -1,200 +1,385 @@
-* {
-    box-sizing: border-box;
+/* ===============================
+   OUT OF THE BOX WEBSITE
+   =============================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-body {
-    margin: 0;
-    font-family: "Georgia", serif;
-    color: #3d342b;
-    background: #faf7f2;
-    line-height: 1.7;
+body{
+    font-family:'Lato',sans-serif;
+    background:#faf9f7;
+    color:#2d2d2d;
+    line-height:1.7;
 }
 
+/* ---------- Navigation ---------- */
 
-header {
-    background: #fff;
-    padding: 20px 8%;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-.logo {
-    font-size: 28px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-
-.nav-links a {
-    text-decoration: none;
-    color: #3d342b;
-    margin-left: 25px;
-}
-
-
-.hero {
-
-    min-height: 90vh;
-
-    background:
-    linear-gradient(
-    rgba(0,0,0,0.35),
-    rgba(0,0,0,0.35)
-    ),
-    url("images/hero.jpg");
-
-    background-size: cover;
-    background-position: center;
-
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
     display:flex;
+    justify-content:space-between;
     align-items:center;
+    padding:20px 8%;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(8px);
+    z-index:1000;
+    box-shadow:0 2px 12px rgba(0,0,0,.05);
+}
+
+.logo img{
+    height:65px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#333;
+    font-family:'Playfair Display',serif;
+    font-size:17px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#b99a3d;
+}
+
+/* ---------- Hero ---------- */
+
+header{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.28),rgba(0,0,0,.28)),
+    url("images/hero.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
     justify-content:center;
-
+    align-items:center;
     text-align:center;
+}
 
+.overlay{
     color:white;
-
+    max-width:850px;
+    padding:20px;
 }
 
-
-.hero-content {
-
-    max-width:700px;
-    padding:30px;
-
-}
-
-
-.hero h1 {
-
-    font-size:55px;
+.overlay h1{
+    font-size:70px;
+    font-weight:400;
+    margin-bottom:40px;
     line-height:1.2;
 
+    /* Replace with LaLuxes when installed */
+    font-family:cursive;
 }
 
+/* ---------- Button ---------- */
 
-.hero p {
+.button{
 
-    font-size:20px;
+display:inline-block;
 
-}
+padding:16px 38px;
 
+border:2px solid #c8a447;
 
-.button {
+color:white;
 
-    display:inline-block;
+text-decoration:none;
 
-    background:#b08b57;
+font-family:Georgia,serif;
 
-    color:white;
+font-style:italic;
 
-    padding:15px 35px;
+font-size:20px;
 
-    border-radius:30px;
-
-    text-decoration:none;
-
-    margin-top:20px;
-
-}
-
-
-section {
-
-    padding:70px 10%;
-
-    text-align:center;
+transition:.4s;
 
 }
 
+.button:hover{
 
-h2 {
-
-    font-size:38px;
-
-    margin-bottom:30px;
+background:#c8a447;
 
 }
 
+/* ---------- Sections ---------- */
 
-.gallery {
+section{
 
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-    gap:25px;
+padding:110px 10%;
 
 }
 
+h2{
 
-.gallery img {
+font-family:'Playfair Display',serif;
 
-    width:100%;
+font-size:42px;
 
-    height:300px;
+margin-bottom:35px;
 
-    object-fit:cover;
+text-align:center;
 
-    border-radius:10px;
-
-}
-
-
-.review {
-
-    background:white;
-
-    padding:30px;
-
-    margin:20px auto;
-
-    max-width:600px;
-
-    border-radius:10px;
+position:relative;
 
 }
 
+h2::after{
 
-footer {
+content:"";
 
-    background:#3d342b;
+width:90px;
 
-    color:white;
+height:2px;
 
-    padding:25px;
+background:#c8a447;
 
-    text-align:center;
+display:block;
 
-}
-
-
-@media(max-width:700px){
-
-nav {
-
-    flex-direction:column;
+margin:15px auto;
 
 }
 
-.nav-links {
+/* ---------- About ---------- */
 
-    margin-top:15px;
+.container{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:60px;
+
+align-items:center;
 
 }
 
-.hero h1 {
+.container img{
 
-    font-size:38px;
+width:100%;
+
+border-radius:12px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+.container p{
+
+font-size:18px;
+
+}
+
+/* ---------- Gallery ---------- */
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+margin-top:50px;
+
+}
+
+.gallery img{
+
+width:100%;
+
+height:350px;
+
+object-fit:cover;
+
+border-radius:10px;
+
+transition:.4s;
+
+cursor:pointer;
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.03);
+
+}
+
+/* ---------- Testimonials ---------- */
+
+#testimonials{
+
+background:#f3eee6;
+
+text-align:center;
+
+}
+
+.testimonial{
+
+max-width:850px;
+
+margin:auto;
+
+padding:40px;
+
+font-size:28px;
+
+font-family:'Playfair Display',serif;
+
+font-style:italic;
+
+min-height:180px;
+
+}
+
+/* ---------- Contact ---------- */
+
+form{
+
+max-width:700px;
+
+margin:40px auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+input,
+
+textarea{
+
+padding:18px;
+
+border:1px solid #d8d8d8;
+
+font-size:17px;
+
+font-family:'Lato',sans-serif;
+
+background:white;
+
+}
+
+input:focus,
+
+textarea:focus{
+
+outline:none;
+
+border-color:#c8a447;
+
+}
+
+button{
+
+padding:16px;
+
+background:white;
+
+border:2px solid #c8a447;
+
+font-family:Georgia,serif;
+
+font-style:italic;
+
+font-size:20px;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+button:hover{
+
+background:#c8a447;
+
+color:white;
+
+}
+
+.details{
+
+text-align:center;
+
+margin-top:30px;
+
+font-size:18px;
+
+}
+
+/* ---------- Footer ---------- */
+
+footer{
+
+background:#222;
+
+color:white;
+
+text-align:center;
+
+padding:30px;
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media(max-width:900px){
+
+.container{
+
+grid-template-columns:1fr;
+
+}
+
+.overlay h1{
+
+font-size:48px;
+
+}
+
+nav{
+
+flex-direction:column;
+
+padding:20px;
+
+}
+
+nav ul{
+
+margin-top:20px;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.gallery img{
+
+height:260px;
 
 }
 
